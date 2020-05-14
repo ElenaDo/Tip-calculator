@@ -3,9 +3,9 @@
     <v-content class="indigo lighten-5 deep-purple--text"> 
       <v-container class="pt-2">
         <v-row class="mx-0 my-0">
-          <v-col cols="12" md="5" class="py-0 px-2 pt-1">
+          <v-col cols="12" md="5" class="py-0 pt-1">
             <v-container class="py-0 px-0">
-              <v-row class="mx-0">
+              <v-row class="mx-auto">
                 <v-col class="px-0 px-2">
                 <v-text-field
                   dense
@@ -26,7 +26,9 @@
                     dense
                     group
                   >
-                  <v-btn class="py-0" color="white mx-0 px-5 mb-1" v-for="(country,key) in countries"
+                  <v-btn class="py-0" 
+                  color="deep-purple mx-0 px-5 mb-1" 
+                  v-for="(country,key) in countries"
                   :key="key" :value="country">
                   {{key}}
                   </v-btn>
@@ -35,7 +37,7 @@
                 </v-row>
                 <v-row class="mx-0">
                   <v-col class="px-0">
-                    <div class="my-0 pb-0">Rate your service</div>
+                    <div class="my-0 pb-1">Rate your service</div>
                       <v-list class="py-0 mb-1 mt-0">
                         <v-list-item-group v-model="tips">
                           <v-list-item
@@ -75,9 +77,11 @@
                   </v-slider>
                 </v-col>
               </v-row>
-              <v-row class="mx-0">
+              <v-row class="mx-0 px-3">
                 <v-col class="text-center px-0" cols="3">
-                  <div class="subheading px-0 font-weight-light">Percentage</div>
+                  <div class="subheading px-0 font-weight-light">
+                    Percentage
+                  </div>
                     <span
                       class="display-2 font-weight-light"
                       v-text="tips"
@@ -85,23 +89,31 @@
                     <span class="subheading px-0 font-weight-light">%</span>
                 </v-col>
                 <v-col class="text-center px-0" cols="6">
-                  <div v-if="this.check" class="subheading font-weight-light">Total tips</div>
+                  <div v-if="this.check" class="subheading font-weight-light">
+                  Total tips
+                  </div>
                   <span
                     v-if="this.check"
                     class="display-2 px-0 font-weight-light"
                     v-text="total_tips"
                   ></span>
-                  <span v-if="this.check" class="subheading px-0 font-weight-light">{{currency[selected_country]}}</span>
+                  <span v-if="this.check" class="subheading px-0 font-weight-light">
+                  {{currency[selected_country]}}
+                  </span>
                 </v-col>
-                <v-col class="text-center px-0" cols="3">
-                  <div v-if="this.check" class="subheading font-weight-light">Total</div>
-                  <span
-                    v-if="this.check"
-                  class="display-2 px-0 font-weight-light"
-                  v-text="total_check"
-                  ></span>
-                <span v-if="this.check" class="subheading font-weight-light">{{currency[selected_country]}}</span>
-                  </v-col>
+                <v-col class="text-center pl-0" cols="3">
+                  <div v-if="this.check" class="subheading font-weight-light">
+                    Total
+                  </div>
+                    <span
+                      v-if="this.check"
+                    class="display-2 px-0 font-weight-light"
+                    v-text="total_check"
+                    ></span>
+                    <span v-if="this.check" class="subheading font-weight-light">
+                    {{currency[selected_country]}}
+                    </span>
+                </v-col>
               </v-row>
             </v-container>
           </v-col>
